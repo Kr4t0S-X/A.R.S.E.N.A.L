@@ -1,22 +1,25 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const token = ODY2Nzg2NjE4NDIxODA1MDg3.YPXn8Q.UP-Tkn8PLub-zsFuYArIO6xL1NE
+const Discord = require("discord.js");
+const config = require("./config.json")
 
-client.once('ready', () => {
-   console.log(‘Félicitations, votre bot Discord a été correctement initialisé !');
+const client = new Discord.Client();
+const prefix = "!";
+
+client.on("message", function(message) {
+	if (message.author.bot) return;
+	if (!message.content.startsWith(prefix)) return;
+
+	const commandBody = message.content.slice(prefix.length);
+	const args = commandBody.split(' ');
+	const command = args.shift().toLowerCase();
+
+	if (command === "ping") {
+		 const timeTaken = Date.now() - message.createdTimestamp;
+		 message.reply('Pong! This message had a latency of ${timeTaken}ms.');
+	 }
+
+	if (command === "khoraprime") {
+		message.reply('https://imgur.com/a/WQRUqqX');
+	}
 });
 
-client.on("message", message => {
-	if (messagecontent === "!ping") {
-		message.channel.send("Pong.")
-	}
-})
-
-const kick = require("../commands/kick")
-module.exports = (client, message) => {
-  if (message.content.startsWith("!kick")) {
-    return kick(message)
-  }
-}
-
-client.login(token);
+client.login(config.BOT_TOKEN);
