@@ -1,11 +1,22 @@
-'use strict';
+/*
+ * 'use strict';
+ */
 
+const fs = require("fs");
 const Discord = require("discord.js");
 const config = require("./config.json")
-
-const client = new Discord.Client();
-const prefix = "!";
+const prefix = "!build ";
 const { Client, MessageEmbed } = require('discord.js');
+
+const client = new Discord.Client()
+client.command = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commant.set(command.name, command);
+}
 
 client.on("message", function(message) {
 	if (message.author.bot) return;
@@ -17,36 +28,36 @@ client.on("message", function(message) {
 
 	if (command === "ping") {
 		 const timeTaken = Date.now() - message.createdTimestamp;
-		 message.reply('Pong! This message had a latency of ${timeTaken}ms.');
-	 }
+		 message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
+	}
+	if (!client.command.has(command)) return;
+
+	try {
+		client.command.get(command).execute(message, args);
+	} catch (error) {
+		console.error(error);
+		message.reply('Error occured while trying to execute the command.')
+	}
 
 /* WARFRAME BUILDS */
 
-	/**
-const wf_tab = new Array(255);
-const wf_build = new Array(255);
-
-	wf_tab = [ [Ash], [Atlas], [Banshee], [Baruuk], [Chroma], [Ember], [Equinox], [Excalibur], [Frost], [Gara], [Garuda], [Gauss], [Grendel], [Harrow], [Hildryn], [Hydroid], [Inaros], [Ivara], [Khora], [Limbo], [Loki], [Mag], [Mesa], [Mirage], [Nekros], [Nezha], [Nidus], [Nova], [Nyx], [Oberon], [Octavia], [Protea], [Revenant], [Rhino], [Saryn], [Titania], [Trinity], [Valkyr], [Vauban], [Volt], [Wisp], [Wukong], [Zephyr] ];
-
-	wf_builds = [ ['[Build regulators]\n(https://imgur.com/Acyx6wX)\n[Build general]\n(https://imgur.com/GA3FLZe)';
-var i = new int;
-	let i = 0;
-
-	while (i <= 100) {
-
+/*
+	if (command === "khora") {
+		const embed = new MessageEmbed()
+		.setTitle('Khora')
+		.setColor(0xff0000)
+		.setDescription('**Warframe :**\nGeneral\n[Build](https://www.youtube.com/watch?v=dQw4w9WgXcQ)\nArbitration\n[Build](https://www.youtube.com/watch?v=dQw4w9WgXcQ)\n\n**Venari :**\nGeneral\n[Build](https://www.youtube.com/watch?v=dQw4w9WgXcQ)');
+		message.channel.send(embed);
 	}
 
-		if (command === wf_tab[i]) {
-			message.reply('https://imgur.com/a/WQRUqqX');
-	}
-**/
 	if (command === "mesa") {
 		const embed = new MessageEmbed()
 		.setTitle('Mesa')
 		.setColor(0xff0000)
-		.setDescription('Regulators\n[Build](https://imgur.com/Acyx6wX)\nGeneral\n[Build](https://imgur.com/GA3FLZe)');
+		.setDescription('**Regulators**\n\n[Build](https://www.youtube.com/watch?v=dQw4w9WgXcQ)\n**General**\n\n[Build](https://www.youtube.com/watch?v=dQw4w9WgXcQ)');
 		message.channel.send(embed);
 	}
+*/
 
 /* WEAPON BUILDS  */
 

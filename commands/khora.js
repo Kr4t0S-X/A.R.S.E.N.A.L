@@ -1,0 +1,11 @@
+const Discord = requires("discord.js");
+
+module.export = {
+	name: 'khora',
+	description: 'Khora Builds',
+	var embed = new MessageEmbed()
+		.setTitle('Khora')
+		.setColor(0xff0000)
+		.setDescription('**Warframe :**\nGeneral\n[Build](https://www.youtube.com/watch?v=dQw4w9WgXcQ)\nArbitration\n[Build](https://www.youtube.com/watch?v=dQw4w9WgXcQ)\n\n**Venari :**\nGeneral\n[Build](https://www.youtube.com/watch?v=dQw4w9WgXcQ)');
+	message.channel.send(embed);
+}
