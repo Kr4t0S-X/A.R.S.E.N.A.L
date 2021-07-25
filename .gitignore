@@ -6,6 +6,10 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Useless files
+0ld_index.js
+test.js
+
 # JSON TOKEN
 config.json
 
