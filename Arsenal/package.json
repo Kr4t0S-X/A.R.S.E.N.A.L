@@ -1,7 +1,7 @@
 {
-  "name": "ynell",
+  "name": "Arsenal",
   "version": "1.0.0",
-  "description": "Discord Bot for Warframe",
+  "description": "Discord Bot for Warframe Arsenal",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/KraaatOS/discord_bot#readme",
   "dependencies": {
     "discord.js": "^12.5.3"
+  },
+  "scripts": {
+	  "start": "node index.js"
   }
 }
