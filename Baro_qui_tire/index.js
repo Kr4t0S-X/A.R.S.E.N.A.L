@@ -5,7 +5,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json')
-const { Client, MessageEmbed } = require('discord.js');
+//const { Client, MessageEmbed } = require('discord.js');
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection();
@@ -22,11 +22,10 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+	if (!message.content.startsWith(prefix)) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
-
 	if(!client.commands.has(command)) return;
 
 	try {
