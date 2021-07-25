@@ -18,8 +18,5 @@
   "homepage": "https://github.com/KraaatOS/discord_bot#readme",
   "dependencies": {
     "discord.js": "^12.5.3"
-  },
-  "scripts": {
-	  "start": "node index.js"
   }
 }
