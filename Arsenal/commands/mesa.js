@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-module.export = {
+module.exports = {
 	name: 'mesa',
 	description: 'Mesa Builds',
 	execute(message) {

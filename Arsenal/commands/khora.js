@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 
-module.export = {
+module.exports = {
 	name: 'khora',
 	description: 'Khora Builds',
-	execute(message, args, Discord) {
+	execute(message, args) {
 		const embed = new Discord.MessageEmbed()
 			.setTitle('Khora')
 			.setColor(0xff0000)
