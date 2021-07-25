@@ -9,7 +9,7 @@ lerna-debug.log*
 # Useless files
 ./Arsenal/0ld_index.js
 ./Arsenal/commands/test.js
-node_modules
+.hidden
 
 # JSON TOKEN
 config.json
