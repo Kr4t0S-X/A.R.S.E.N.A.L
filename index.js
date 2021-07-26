@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const Discord = require('discord.js');
-const { token } = require('./config.json')
+/* const { token } = require('./config.json') */
 const prefix = "!build"
 
 const client = new Discord.Client()
@@ -34,4 +34,4 @@ client.on('message', message => {
 	}
 });
 
-client.login(token);
+client.login(process.env.token);
