@@ -9,7 +9,6 @@ const port = process.env.port || 5001;
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection();
-app.listen(port, () => console.log(`Server is listening on port ${PORT}...`));
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -20,6 +19,7 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
 	console.log('Greetings Commander');
+	client.listen(port, () => console.log(`Server is listening on port ${PORT}...`));
 });
 
 client.on('message', message => {
