@@ -20,8 +20,8 @@
 		"discord.js": "^12.5.3"
 	},
 	"scripts": {
-		"start": "webpack-dev-server --mode development --hot --open --port $PORT",
-		"build": "npm i -dev && webpack --mode production",
-		"heroku-postbuild": "npm build"
+		"start": "node index.js",
+		"build": "ng build",
+		"heroku-postbuild": "ng build --prod"
 	}
 }
