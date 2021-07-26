@@ -6,8 +6,6 @@ const Discord = require('discord.js');
 const prefix = "!build"
 var port = process.env.PORT || 8080;
 
-var server=app.listen(port,function() {
-console.log("app running on port 8080"); });
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection();
@@ -38,4 +36,4 @@ client.on('message', message => {
 	}
 });
 
-client.login(process.env.token);
+client.login(process.env.token, port);
