@@ -19,7 +19,6 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
 	console.log('Greetings Commander');
-	client.listen(port, () => console.log(`Server is listening on port ${PORT}...`));
 });
 
 client.on('message', message => {
