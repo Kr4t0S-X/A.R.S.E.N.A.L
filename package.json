@@ -1,25 +1,27 @@
 {
-  "name": "A.R.S.E.N.A.L",
-  "version": "1.0.0",
-  "description": "Discord Bot for Warframe Arsenal",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KraaatOS/discord_bot.git"
-  },
-  "author": "Kratos-X",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KraaatOS/discord_bot/issues"
-  },
-  "homepage": "https://github.com/KraaatOS/discord_bot#readme",
-  "dependencies": {
-    "discord.js": "^12.5.3"
-  },
-  "scripts": {
-	"start": "node index.js"
-  }
+	"name": "A.R.S.E.N.A.L",
+	"version": "1.0.0",
+	"description": "Discord Bot for Warframe Arsenal",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KraaatOS/discord_bot.git"
+	},
+	"author": "Kratos-X",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/KraaatOS/discord_bot/issues"
+	},
+	"homepage": "https://github.com/KraaatOS/discord_bot#readme",
+	"dependencies": {
+		"discord.js": "^12.5.3"
+	},
+	"scripts": {
+		"start": "webpack-dev-server --mode development --hot --open --port $PORT",
+		"build": "npm i -dev && webpack --mode production",
+		"heroku-postbuild": "npm build"
+	}
 }
