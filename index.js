@@ -4,8 +4,9 @@ const fs = require('fs');
 const Discord = require('discord.js');
 /* const { token } = require('./config.json') */
 const prefix = "!build"
-var port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5001;
 
+client.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection();
