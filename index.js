@@ -1,4 +1,4 @@
- 'use strict';
+'use strict';
 
 const fs = require('fs');
 const Discord = require('discord.js');
@@ -9,7 +9,7 @@ const port = process.env.port || 5001;
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection();
-client.listen(port, () => console.log(`Server is listening on port ${PORT}...`));
+app.listen(port, () => console.log(`Server is listening on port ${PORT}...`));
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
