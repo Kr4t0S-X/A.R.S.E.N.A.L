@@ -4,7 +4,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 /* const { token } = require('./config.json') */
 const prefix = "!build"
-const port = process.env.port || 5001;
+const PORT = process.env.PORT || '8080';
 
 
 const client = new Discord.Client()
@@ -36,4 +36,4 @@ client.on('message', message => {
 	}
 });
 
-client.login(process.env.token, port);
+client.login(process.env.token, PORT);
