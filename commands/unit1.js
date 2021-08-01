@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'unit_test',
-	description: 'unit_test',
+	name: 'unit1',
+	description: 'unit1',
 	execute(message) {
 		message.channel.send('!build ash');
 		message.channel.send('!build atlas');
