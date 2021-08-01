@@ -34,4 +34,4 @@ client.on('message', message => {
 	}
 });
 
-client.login(process.env.token, process.env.port);
+client.login(process.env.token, process.env.PORT);
